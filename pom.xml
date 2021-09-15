@@ -24,7 +24,7 @@
 
   <groupId>io.streamnative.connectors</groupId>
   <artifactId>pulsar-spark-connector_2.12</artifactId>
-  <version>3.1.1.1</version>
+  <version>3.1.1.2<-SNAPSHOT/version>
   <name>StreamNative :: Pulsar Spark Connector</name>
   <url>https://pulsar.apache.org</url>
   <inceptionYear>2019</inceptionYear>
@@ -64,12 +64,12 @@
 
     <!-- dependencies -->
     <!-- latest version from apache pulsar master -->
-    <pulsar.version>2.4.2</pulsar.version>
+    <pulsar.version>2.7.1</pulsar.version>
     <scala.version>2.12.10</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
     <scalatest.version>3.2.2</scalatest.version>
     <spark.version>3.1.1</spark.version>
-    <streamnative-tests.version>2.4.2</streamnative-tests.version>
+    <streamnative-tests.version>2.5.1</streamnative-tests.version>
     <testcontainers.version>1.10.6</testcontainers.version>
     <!-- plugin dependencies -->
     <maven.version>3.5.4</maven.version>
