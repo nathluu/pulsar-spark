@@ -38,8 +38,52 @@ object PulsarConfigurationUtils {
     nonIgnoredFields[T].map(s => s.toLowerCase(Locale.ROOT) -> s).toMap
   }
 
+  /**
   val clientConfKeys = insensitive2Sensitive[ClientConfigurationData]
   val producerConfKeys = insensitive2Sensitive[ProducerConfigurationData]
   val consumerConfKeys = insensitive2Sensitive[ConsumerConfigurationData[_]]
   val readerConfKeys = insensitive2Sensitive[ReaderConfigurationData[_]]
+  */
+  val clientConfKeys = Map("maxnumberofrejectedrequestperconnection" -> "maxNumberOfRejectedRequestPerConnection",
+    "serviceurl" -> "serviceUrl", "tlstrustcertsfilepath" -> "tlsTrustCertsFilePath",
+    "keepaliveintervalseconds" -> "keepAliveIntervalSeconds", "statsintervalseconds" -> "statsIntervalSeconds",
+    "connectiontimeoutms" -> "connectionTimeoutMs", "numlistenerthreads" -> "numListenerThreads",
+    "maxbackoffintervalnanos" -> "maxBackoffIntervalNanos", "authparams" -> "authParams",
+    "tlshostnameverificationenable" -> "tlsHostnameVerificationEnable",
+    "authpluginclassname" -> "authPluginClassName", "initialbackoffintervalnanos" -> "initialBackoffIntervalNanos",
+    "concurrentlookuprequest" -> "concurrentLookupRequest", "requesttimeoutms" -> "requestTimeoutMs",
+    "numiothreads" -> "numIoThreads", "usetls" -> "useTls",
+    "tlsallowinsecureconnection" -> "tlsAllowInsecureConnection", "usetcpnodelay" -> "useTcpNoDelay",
+    "maxlookuprequest" -> "maxLookupRequest", "operationtimeoutms" -> "operationTimeoutMs",
+    "connectionsperbroker" -> "connectionsPerBroker")
+  val producerConfKeys = Map("hashingscheme" -> "hashingScheme", "producername" -> "producerName",
+    "maxpendingmessages" -> "maxPendingMessages",
+    "maxpendingmessagesacrosspartitions" -> "maxPendingMessagesAcrossPartitions",
+    "batchingmaxmessages" -> "batchingMaxMessages", "blockifqueuefull" -> "blockIfQueueFull",
+    "autoupdatepartitions" -> "autoUpdatePartitions", "properties" -> "properties",
+    "cryptofailureaction" -> "cryptoFailureAction",
+    "batchingmaxpublishdelaymicros" -> "batchingMaxPublishDelayMicros", "topicname" -> "topicName",
+    "sendtimeoutms" -> "sendTimeoutMs", "initialsequenceid" -> "initialSequenceId",
+    "batchingenabled" -> "batchingEnabled", "compressiontype" -> "compressionType",
+    "messageroutingmode" -> "messageRoutingMode")
+  val consumerConfKeys = Map("topicspattern" -> "topicsPattern",
+    "replicatesubscriptionstate" -> "replicateSubscriptionState", "consumername" -> "consumerName",
+    "prioritylevel" -> "priorityLevel", "acktimeoutmillis" -> "ackTimeoutMillis",
+    "tickdurationmillis" -> "tickDurationMillis",
+    "subscriptioninitialposition" -> "subscriptionInitialPosition",
+    "regexsubscriptionmode" -> "regexSubscriptionMode", "deadletterpolicy" -> "deadLetterPolicy",
+    "maxtotalreceiverqueuesizeacrosspartitions" -> "maxTotalReceiverQueueSizeAcrossPartitions",
+    "autoupdatepartitions" -> "autoUpdatePartitions", "properties" -> "properties",
+    "cryptofailureaction" -> "cryptoFailureAction", "topicnames" -> "topicNames",
+    "subscriptiontype" -> "subscriptionType", "subscriptionname" -> "subscriptionName",
+    "acknowledgementsgrouptimemicros" -> "acknowledgementsGroupTimeMicros",
+    "receiverqueuesize" -> "receiverQueueSize", "readcompacted" -> "readCompacted",
+    "resetincludehead" -> "resetIncludeHead",
+    "negativeackredeliverydelaymicros" -> "negativeAckRedeliveryDelayMicros",
+    "patternautodiscoveryperiod" -> "patternAutoDiscoveryPeriod")
+  val readerConfKeys = Map("cryptokeyreader" -> "cryptoKeyReader", "readerlistener" -> "readerListener",
+    "readername" -> "readerName", "subscriptionroleprefix" -> "subscriptionRolePrefix",
+    "cryptofailureaction" -> "cryptoFailureAction", "topicname" -> "topicName",
+    "receiverqueuesize" -> "receiverQueueSize", "readcompacted" -> "readCompacted",
+    "resetincludehead" -> "resetIncludeHead")
 }
